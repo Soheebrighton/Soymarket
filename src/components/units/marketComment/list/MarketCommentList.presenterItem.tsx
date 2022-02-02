@@ -52,7 +52,7 @@ export default function MarketCommentListUIItem(
           },
         ],
       });
-    } catch (error) {
+    } catch (error: any) {
       alert(error.message);
     }
   };
@@ -67,53 +67,54 @@ export default function MarketCommentListUIItem(
 
   return (
     <>
-      {!isEditQuestion && (
-        <A.Wrapper>
-          <A.CommentQandA>
-            <A.CommentView>
-              <A.CommentProfilePhoto>
-                <Avatar size="large" icon={<UserOutlined />} />
-              </A.CommentProfilePhoto>
-              <A.CommentViewDetails>
-                <A.CommentViewTop>
-                  <A.CommentWriter>{props.el?.user.name}</A.CommentWriter>
-                </A.CommentViewTop>
-                <A.CommentViewText>{props.el?.contents}</A.CommentViewText>
-                <A.CommentViewDate>
-                  {displayedAt(props.el?.createdAt)}
-                </A.CommentViewDate>
-              </A.CommentViewDetails>
-              <A.CommentEandD>
-                {props.el?.user._id ===
-                  props.dataForUserInfo?.fetchUserLoggedIn._id && (
-                  <>
-                    <A.CommentEdit onClick={onClickEditQuestion}>
-                      <FontAwesomeIcon icon={faEdit} color="#eeeeee" />
-                    </A.CommentEdit>
-                    <A.CommentDelete onClick={onClickDeleteQuestion}>
-                      <FontAwesomeIcon icon={faTrashAlt} color="#eeeeee" />
-                    </A.CommentDelete>
-                  </>
-                )}
-                <span
-                  style={{ paddingLeft: "10px" }}
-                  onClick={onClickAnswerInput}
-                >
-                  <FontAwesomeIcon icon={faCommentAlt} color="#e2e2e2" />
-                </span>
-              </A.CommentEandD>
-            </A.CommentView>
-            <AnswerList usedQId={props.el?._id} />
-            {isAnswerWrite && (
-              <AnswerWrite
-                useditemQuestionId={props.el?._id}
-                setIsAnswerWrite={setIsAnswerWrite}
-              />
-            )}
-          </A.CommentQandA>
-        </A.Wrapper>
-      )}
-
+      <A.Background>
+        {!isEditQuestion && (
+          <A.Wrapper>
+            <A.CommentQandA>
+              <A.CommentView>
+                <A.CommentProfilePhoto>
+                  <Avatar size="large" icon={<UserOutlined />} />
+                </A.CommentProfilePhoto>
+                <A.CommentViewDetails>
+                  <A.CommentViewTop>
+                    <A.CommentWriter>{props.el?.user.name}</A.CommentWriter>
+                  </A.CommentViewTop>
+                  <A.CommentViewText>{props.el?.contents}</A.CommentViewText>
+                  <A.CommentViewDate>
+                    {displayedAt(props.el?.createdAt)}
+                  </A.CommentViewDate>
+                </A.CommentViewDetails>
+                <A.CommentEandD>
+                  {props.el?.user._id ===
+                    props.dataForUserInfo?.fetchUserLoggedIn._id && (
+                    <>
+                      <A.CommentEdit onClick={onClickEditQuestion}>
+                        <FontAwesomeIcon icon={faEdit} color="#eeeeee" />
+                      </A.CommentEdit>
+                      <A.CommentDelete onClick={onClickDeleteQuestion}>
+                        <FontAwesomeIcon icon={faTrashAlt} color="#eeeeee" />
+                      </A.CommentDelete>
+                    </>
+                  )}
+                  <span
+                    style={{ paddingLeft: "10px" }}
+                    onClick={onClickAnswerInput}
+                  >
+                    <FontAwesomeIcon icon={faCommentAlt} color="#e2e2e2" />
+                  </span>
+                </A.CommentEandD>
+              </A.CommentView>
+              <AnswerList usedQId={props.el?._id} />
+              {isAnswerWrite && (
+                <AnswerWrite
+                  useditemQuestionId={props.el?._id}
+                  setIsAnswerWrite={setIsAnswerWrite}
+                />
+              )}
+            </A.CommentQandA>
+          </A.Wrapper>
+        )}
+      </A.Background>
       {isEditQuestion && (
         <MarketCommentWrite
           usedQId={props.el?._id}

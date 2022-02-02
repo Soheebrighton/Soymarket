@@ -253,23 +253,18 @@ export const ButtonWrapper = styled.div`
 `;
 
 export const SubmitButton = styled.button`
-  width: 150px;
-  height: 42px;
-  background-color: black;
-  border-radius: 10px;
-  border: none;
-  font-size: 14px;
-  color: gray;
+  width: 20%;
+  background-color: #1dbc67;
+  margin: 10px 0px 30px 0px;
+  color: white;
   font-weight: 600;
-  align-self: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
   transition: all 0.3s ease;
-  &:hover {
-    background-color: #787878;
-    color: white;
+  cursor: pointer;
+  :hover {
+    background-color: #1aad5f;
   }
 `;
 

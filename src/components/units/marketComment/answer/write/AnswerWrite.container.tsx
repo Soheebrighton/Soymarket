@@ -47,7 +47,7 @@ export default function AnswerWrite(props: IPropsAnswerWrite) {
         ],
       });
       props.setIsAnswerWrite((prev: SetStateAction<boolean>) => !prev);
-    } catch (error) {
+    } catch (error: any) {
       alert(error.message);
     }
   };
@@ -63,7 +63,7 @@ export default function AnswerWrite(props: IPropsAnswerWrite) {
         },
       });
       props.setIsEditAnswer(false);
-    } catch (error) {
+    } catch (error: any) {
       alert(error.message);
     }
   };

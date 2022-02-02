@@ -5,7 +5,8 @@ import ReactPlayer from "react-player";
 import styled from "@emotion/styled";
 import { IPropsBoardViewUI } from "./BoardView.types";
 import { getDate, onError } from "../../../../commons/libraries/utils";
-
+import { Avatar } from "antd";
+import { UserOutlined } from "@ant-design/icons";
 const MyYoutube = styled(ReactPlayer)``;
 
 export default function BoardViewUI(props: IPropsBoardViewUI) {
@@ -22,11 +23,7 @@ export default function BoardViewUI(props: IPropsBoardViewUI) {
             <A.Profile>
               <A.Name>{props.data?.fetchBoard.writer}</A.Name>
               <A.ProfilePhoto>
-                <img
-                  src="/images/icon_noprofile.png"
-                  width="35px"
-                  height="35px"
-                />
+                <Avatar size="small" icon={<UserOutlined />} />
               </A.ProfilePhoto>
             </A.Profile>
           </A.Writer>

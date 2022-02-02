@@ -129,7 +129,7 @@ export default function MarketList() {
     });
   };
 
-  const [startPage, setStartPage] = useState<number>(1);
+  // const [startPage, setStartPage] = useState<number>(1);
   const [keyword, setKeyword] = useState<string>("");
 
   const onChangeKeyword = (value: any) => {

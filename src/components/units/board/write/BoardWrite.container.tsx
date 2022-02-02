@@ -204,7 +204,7 @@ export default function BoardWrite(props: IBoardWriteProps) {
       });
 
       router.push(`/boards/${router.query.myId}`);
-    } catch (error) {
+    } catch (error: any) {
       alert(error.message);
     }
   };

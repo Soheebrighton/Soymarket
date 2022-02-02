@@ -60,7 +60,7 @@ export default function MarketCommentWrite(props: IPropsMarketCommentWrite) {
         updateUseditemQuestionInput: {
           contents: contents,
         },
-        useditemQuestionId: props.usedQId,
+        useditemQuestionId: String(props.usedQId),
       },
       refetchQueries: [
         {

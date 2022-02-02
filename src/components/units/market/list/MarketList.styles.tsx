@@ -69,7 +69,7 @@ export const PickWrapper = styled.div`
       .map((pick) => pick._id)
       .includes(props.el?._id)
       ? "#a2d6ba5f"
-      : "#00000014"};
+      : "#00000011"};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -227,7 +227,8 @@ export const BImg = styled.img`
 `;
 
 export const Label = styled.div`
-  background-image: url("images/label.png");
+  background-image: url("/images/label.png");
+  /* background-color: #1dbc67; */
   display: flex;
   justify-content: center;
   align-items: center;

@@ -8,7 +8,7 @@ import { IPropsHeaderUI } from "./Header.types";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Fade from "@mui/material/Fade";
-import SideSheet from "react-side-sheet";
+import Drawer from "@mui/material/Drawer";
 import Cart from "../../../units/market/cart/MarketCart.container";
 
 const FETCH_USER_LOGGED_IN = gql`
@@ -34,7 +34,7 @@ export default function HeaderUI(props: IPropsHeaderUI) {
   const [logoutUser] = useMutation(LOGOUT_USER);
 
   const [anchorEl, setAnchorEl] = useState(null);
-  const [openSheet, setOpenSheet] = useState(false);
+  const [openSheet, setOpenSheet] = useState<boolean>(false);
 
   const open = Boolean(anchorEl);
 
@@ -55,7 +55,7 @@ export default function HeaderUI(props: IPropsHeaderUI) {
     setAnchorEl(null);
     await logoutUser();
     localStorage.removeItem("refreshToken");
-    router.reload();
+    // router.reload();
   };
 
   const handleCloseCart = async () => {
@@ -101,7 +101,6 @@ export default function HeaderUI(props: IPropsHeaderUI) {
                   onClose={handleClose}
                   TransitionComponent={Fade}
                 >
-                  <MenuItem onClick={handleClose}>Profile</MenuItem>
                   <MenuItem onClick={handleClosePicked}>찜목록</MenuItem>
                   <MenuItem onClick={handleCloseCart}>장바구니</MenuItem>
                   <MenuItem onClick={handleCloseLogout}>Logout</MenuItem>
@@ -120,9 +119,13 @@ export default function HeaderUI(props: IPropsHeaderUI) {
         </A.LoginBtns>
       </A.Wrapper>
       <div>
-        <SideSheet isOpen={openSheet} onDismiss={() => setOpenSheet(false)}>
+        <Drawer
+          open={openSheet}
+          anchor="right"
+          onClose={() => setOpenSheet(false)}
+        >
           <Cart setOpenSheet={setOpenSheet} />
-        </SideSheet>
+        </Drawer>
       </div>
     </A.Header>
   );

@@ -1,5 +1,9 @@
 import styled from "@emotion/styled";
 
+export const Background = styled.div`
+  padding-bottom: 30px;
+`;
+
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;

@@ -21,8 +21,8 @@ import { useState } from "react";
 
 export default function MarketView() {
   const router = useRouter();
-  const [modalOpen, setModalOpen] = useState(false);
-  const [openSheet, setOpenSheet] = useState(false);
+  const [modalOpen, setModalOpen] = useState<boolean>(false);
+  const [openSheet, setOpenSheet] = useState<boolean>(false);
 
   const { data } = useQuery<
     Pick<IQuery, "fetchUseditem">,
@@ -63,7 +63,7 @@ export default function MarketView() {
       await deleteUseditem({
         variables: { useditemId: String(router.query.myId) },
       });
-    } catch (error) {
+    } catch (error: any) {
       alert(error.message);
     }
     alert("게시물이 삭제되었습니다.");
@@ -84,7 +84,7 @@ export default function MarketView() {
       alert("구매하셨습니다!");
 
       console.log(result);
-    } catch (error) {
+    } catch (error: any) {
       alert(error.message);
     }
   };

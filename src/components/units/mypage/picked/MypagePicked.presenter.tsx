@@ -1,9 +1,8 @@
 import * as A from "./MypagePicked.styles";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { onError } from "../../../../commons/libraries/utils";
 import MypageSide from "../side/MypageSide.container";
 import { IQuery } from "../../../../commons/types/generated/types";
+import { HeartFilled } from "@ant-design/icons";
 
 interface IPropsPickedUI {
   dataForPicked?: Pick<IQuery, "fetchUseditemsIPicked">;
@@ -30,10 +29,8 @@ export default function MypagePickedUI(props: IPropsPickedUI) {
                     />
                   </A.ItemPhoto>
                   <A.PickWrapper onClick={props.onClickUnpick(el)}>
-                    <FontAwesomeIcon
-                      icon={faHeart}
-                      color="#1dbc67"
-                      style={{ fontSize: "15px", textAlign: "center" }}
+                    <HeartFilled
+                      style={{ fontSize: "15px", color: "#1dbc67" }}
                     />
                   </A.PickWrapper>
                   <A.ItemDetails>

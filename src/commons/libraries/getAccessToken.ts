@@ -25,7 +25,7 @@ export async function getAccessToken(
     setMyAccessToken(newAccessToken);
 
     return newAccessToken;
-  } catch (error) {
+  } catch (error: any) {
     console.log(error.message);
   }
 }

@@ -77,7 +77,9 @@ export default function MarketCreateUI(props: IPropsMarketCreateUI) {
                 <A.WriterName
                   type="text"
                   placeholder="판매할 상품의 가격을 입력해주세요."
-                  defaultValue={Number(props.dataForFetch?.fetchUseditem.price)}
+                  defaultValue={
+                    Number(props.dataForFetch?.fetchUseditem.price) || ""
+                  }
                   {...props.register("price")}
                 ></A.WriterName>
                 <A.Error>{props.formState.errors.price?.message}</A.Error>
@@ -185,9 +187,9 @@ export default function MarketCreateUI(props: IPropsMarketCreateUI) {
             <A.UploadImages>
               <A.Titles>사진첨부</A.Titles>
               <A.UploadImageDiv>
-                {props.fileUrls.map((el, index) => (
+                {props.fileUrls.map((el: any, index: number) => (
                   <Uploads01
-                    key={uuidv4}
+                    key={uuidv4()}
                     index={index}
                     fileUrl={el}
                     defaultFileUrl={

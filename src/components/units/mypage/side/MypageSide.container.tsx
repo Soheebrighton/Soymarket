@@ -13,6 +13,10 @@ import {
   IQuery,
 } from "../../../../commons/types/generated/types";
 
+declare const window: typeof globalThis & {
+  IMP: any;
+};
+
 export default function MypageSide() {
   const router = useRouter();
 
@@ -74,7 +78,7 @@ export default function MypageSide() {
               ],
             });
             console.log(result);
-          } catch (error) {
+          } catch (error: any) {
             alert(error.message);
           }
         } else {

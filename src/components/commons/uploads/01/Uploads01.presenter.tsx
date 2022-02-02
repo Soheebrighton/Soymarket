@@ -1,6 +1,15 @@
+import { ChangeEvent, RefObject } from "react";
 import * as A from "./Uploads01.styles";
 
-export default function Uploads01UI(props) {
+interface IPropsUpload01UI {
+  fileRef: RefObject<HTMLInputElement>;
+  fileUrl: any;
+  defaultFileUrl: any;
+  onClickUpload: () => void;
+  onChangeFile: (event: ChangeEvent<HTMLInputElement>) => Promise<void>;
+}
+
+export default function Uploads01UI(props: IPropsUpload01UI) {
   return (
     <>
       {props.fileUrl || props.defaultFileUrl ? (

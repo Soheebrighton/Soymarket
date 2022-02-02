@@ -109,7 +109,7 @@ export default function BoardCommentWrite(props: IPropsBoardCommentWrite) {
         ],
       });
       props.setIsEdit?.(false);
-    } catch (error) {
+    } catch (error: any) {
       alert(error.message);
     }
   };

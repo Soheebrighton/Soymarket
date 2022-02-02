@@ -54,7 +54,7 @@ export default function Profile() {
           },
         });
         alert("변경사항이 저장되었습니다!");
-      } catch (error) {
+      } catch (error: any) {
         alert(error.message);
       }
     } else {
@@ -71,7 +71,7 @@ export default function Profile() {
           },
         });
         alert("비밀번호가 정상적으로 변경되었습니다!");
-      } catch (error) {
+      } catch (error: any) {
         alert(error.message);
       }
     } else if (password !== checkPassword) {

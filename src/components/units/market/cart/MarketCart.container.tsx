@@ -53,7 +53,7 @@ export default function Cart(props: IPropsCart) {
       });
       alert("구매하셨습니다!");
       onClickDelete(event);
-    } catch (error) {
+    } catch (error: any) {
       alert(error.message);
     }
   }

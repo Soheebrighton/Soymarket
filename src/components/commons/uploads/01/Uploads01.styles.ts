@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 
-// 이미지 썸네일 //
 export const Thumbnail = styled.img`
   width: 70px;
   height: 70px;
@@ -14,7 +13,6 @@ export const Thumbnail = styled.img`
   }
 `;
 
-// 이미지 업로드 버튼 박스//
 export const UploadImageBtn = styled.div`
   display: flex;
   flex-direction: column;
@@ -35,7 +33,6 @@ export const UploadImageBtn = styled.div`
   }
 `;
 
-// hidden button //
 export const UploadInputHidden = styled.input`
   width: 100%;
   height: 100%;

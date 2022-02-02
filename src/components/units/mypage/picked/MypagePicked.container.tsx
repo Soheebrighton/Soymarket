@@ -42,7 +42,7 @@ export default function MypagePicked() {
           },
         ],
       });
-    } catch (error) {
+    } catch (error: any) {
       alert(error.message);
     }
   };

@@ -4,8 +4,15 @@ import { useMutation } from "@apollo/client";
 import { useRef, ChangeEvent } from "react";
 import { checkValidationImage } from "./Uploads01.validation";
 
-export default function Uploads01(props) {
-  const fileRef = useRef(null);
+interface IPropsUploads01 {
+  index: number;
+  fileUrl: any;
+  defaultFileUrl: string | undefined;
+  onChangeFileUrls: (fileUrl: string, index: number) => void;
+}
+
+export default function Uploads01(props: IPropsUploads01) {
+  const fileRef = useRef<HTMLInputElement>(null);
   const [uploadFile] = useMutation(UPLOAD_FILE);
 
   function onClickUpload() {
@@ -19,7 +26,7 @@ export default function Uploads01(props) {
     try {
       const result = await uploadFile({ variables: { file } });
       props.onChangeFileUrls(result.data.uploadFile.url, props.index);
-    } catch (error) {
+    } catch (error: any) {
       alert(error.message);
     }
   }

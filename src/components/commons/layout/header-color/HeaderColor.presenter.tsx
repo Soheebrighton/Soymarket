@@ -9,7 +9,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Fade from "@mui/material/Fade";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import SideSheet from "react-side-sheet";
+import Drawer from "@mui/material/Drawer";
 import Cart from "../../../units/market/cart/MarketCart.container";
 
 const FETCH_USER_LOGGED_IN = gql`
@@ -34,7 +34,7 @@ export default function HeaderColorUI(props: IPropsHeaderColor) {
     useQuery<Pick<IQuery, "fetchUserLoggedIn">>(FETCH_USER_LOGGED_IN);
 
   const [logoutUser] = useMutation(LOGOUT_USER);
-  const [openSheet, setOpenSheet] = useState(false);
+  const [openSheet, setOpenSheet] = useState<boolean>(false);
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -45,11 +45,16 @@ export default function HeaderColorUI(props: IPropsHeaderColor) {
     setAnchorEl(null);
   };
 
+  const handleClosePicked = () => {
+    setAnchorEl(null);
+    router.push("/mypage/picked");
+  };
+
   const handleCloseLogout = async () => {
     setAnchorEl(null);
     await logoutUser();
     localStorage.removeItem("refreshToken");
-    router.reload();
+    // router.reload();
   };
 
   const handleCloseCart = async () => {
@@ -120,8 +125,7 @@ export default function HeaderColorUI(props: IPropsHeaderColor) {
                   onClose={handleClose}
                   TransitionComponent={Fade}
                 >
-                  <MenuItem onClick={handleClose}>Profile</MenuItem>
-                  <MenuItem onClick={handleClose}>My account</MenuItem>
+                  <MenuItem onClick={handleClosePicked}>찜목록</MenuItem>
                   <MenuItem onClick={handleCloseCart}>장바구니</MenuItem>
                   <MenuItem onClick={handleCloseLogout}>Logout</MenuItem>
                 </Menu>
@@ -139,9 +143,13 @@ export default function HeaderColorUI(props: IPropsHeaderColor) {
         </A.LoginBtns>
       </A.Wrapper>
       <div>
-        <SideSheet isOpen={openSheet} onDismiss={() => setOpenSheet(false)}>
+        <Drawer
+          open={openSheet}
+          anchor="right"
+          onClose={() => setOpenSheet(false)}
+        >
           <Cart setOpenSheet={setOpenSheet} />
-        </SideSheet>
+        </Drawer>
       </div>
     </A.Header>
   );

@@ -67,10 +67,11 @@ export default function MarketCreate() {
         name: dataForFetch?.fetchUseditem.name,
         remarks: dataForFetch?.fetchUseditem.remarks,
         price: dataForFetch?.fetchUseditem.price,
+        contents: dataForFetch?.fetchUseditem.contents,
       },
     });
 
-  function handleChangeQuill(value: String) {
+  function handleChangeQuill(value: string) {
     setValue("contents", value === "<p><br></p>" ? "" : value);
     trigger("contents");
   }
@@ -106,7 +107,7 @@ export default function MarketCreate() {
           useditemId: String(router.query.myId),
         },
       });
-    } catch (error) {
+    } catch (error: any) {
       alert(error.message);
     }
     router.push(`/market/${router.query.myId}`);

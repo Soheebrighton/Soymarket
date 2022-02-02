@@ -83,8 +83,8 @@ export default function Register() {
             },
           },
         });
-        router.push("/auth/login");
-      } catch (error) {
+        router.push("/auth/login/");
+      } catch (error: any) {
         alert(error.message);
       }
     }
@@ -95,7 +95,7 @@ export default function Register() {
   };
 
   const onClickLogin = () => {
-    router.replace("/auth/login");
+    router.replace("/auth/login/");
   };
 
   const handleClickShowPassword = () => {

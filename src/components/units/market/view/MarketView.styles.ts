@@ -5,14 +5,14 @@ export const Background = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px 30px 0px 30px;
+  padding: 0px 30px 0px 30px;
 `;
 
 export const Wrapper = styled.div`
   width: 1000px;
   display: flex;
   flex-direction: column;
-  padding: 60px 60px 0px 60px;
+  padding: 30px 60px 0px 60px;
 `;
 
 export const DeleteAndEdit = styled.div`

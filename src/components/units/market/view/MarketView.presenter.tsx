@@ -9,7 +9,7 @@ import KakaoMap from "../../../commons/maps/kakaomap";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import SideSheet from "react-side-sheet";
+import Drawer from "@mui/material/Drawer";
 import Cart from "../cart/MarketCart.container";
 
 export default function MarketViewUI(props: IPropsMarketViewUI) {
@@ -145,12 +145,13 @@ export default function MarketViewUI(props: IPropsMarketViewUI) {
           </Modal>
         </div>
         <div>
-          <SideSheet
-            isOpen={props.openSheet}
-            onDismiss={() => props.setOpenSheet(false)}
+          <Drawer
+            open={props.openSheet}
+            anchor="right"
+            onClose={() => props.setOpenSheet(false)}
           >
             <Cart setOpenSheet={props.setOpenSheet} />
-          </SideSheet>
+          </Drawer>
         </div>
       </A.Background>
     </>

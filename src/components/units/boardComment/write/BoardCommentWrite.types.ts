@@ -7,13 +7,13 @@ export interface IPropsBoardCommentWriteUI {
   onClickWrite: () => Promise<void>;
   onClickUpdate: () => Promise<void>;
   onChangeStar: (value: number) => void;
-  isEdit: boolean;
+  isEdit?: boolean;
   el: any;
   myContents: string;
 }
 
 export interface IPropsBoardCommentWrite {
-  setIsEdit: any;
-  isEdit: boolean;
-  el: any;
+  setIsEdit?: any;
+  isEdit?: boolean;
+  el?: any;
 }

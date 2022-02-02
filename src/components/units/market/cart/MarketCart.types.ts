@@ -6,11 +6,11 @@ export interface IPropsCartUI {
   onClickItems: () => void;
   onClickDelete: (event: any) => void;
   onClickBuyItem: (event: any) => Promise<void>;
-  setOpenSheet: Dispatch<SetStateAction<boolean>>;
+  setOpenSheet?: Dispatch<SetStateAction<boolean>>;
 }
 
 export interface IPropsCart {
-  setOpenSheet: Dispatch<SetStateAction<boolean>>;
+  setOpenSheet?: any;
 }
 
 export interface IPropsContainer {

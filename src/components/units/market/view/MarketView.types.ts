@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from "react";
 import { IQuery } from "../../../../commons/types/generated/types";
 
 export interface IPropsMarketViewUI {
@@ -12,6 +13,11 @@ export interface IPropsMarketViewUI {
   onClickPickItem: () => Promise<void>;
   onClickAddItemToCart: (el: any) => () => void;
   onClickBuyPoint: () => void;
+  setOpenSheet: Dispatch<SetStateAction<boolean>>;
+  openSheet: boolean;
+  modalOpen: boolean;
+  handleClose: () => void;
+  onClickGoToCart: () => void;
 }
 
 export interface IPropsPickBtn {

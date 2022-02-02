@@ -1,10 +1,10 @@
 import { useRouter } from "next/router";
-import { useContext, useEffect } from "react";
-import { GlobalContext } from "../../../../pages/_app";
+import { useEffect } from "react";
+// import { GlobalContext } from "../../../../pages/_app";
 
 export const withAuth = (Component: any) => (props: any) => {
   const router = useRouter();
-  const { accessToken } = useContext(GlobalContext);
+  // const { accessToken } = useContext(GlobalContext);
 
   useEffect(() => {
     // if (!localStorage.getItem("accessToken")) {

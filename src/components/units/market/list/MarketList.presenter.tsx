@@ -1,12 +1,11 @@
 import * as A from "./MarketList.styles";
 import InfiniteScroll from "react-infinite-scroller";
-import { faStore, faHeart } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import StickyBox from "react-sticky-box";
 import SearchBars from "../../../commons/searchbars/SearchBars.container";
 import { v4 as uuidv4 } from "uuid";
 import { IPropsMarketListUI } from "./MarketList.types";
 import { onError } from "../../../../commons/libraries/utils";
+import { HeartFilled, HeartOutlined, ShopOutlined } from "@ant-design/icons";
 
 export default function MarketListUI(props: IPropsMarketListUI) {
   return (
@@ -49,7 +48,7 @@ export default function MarketListUI(props: IPropsMarketListUI) {
 
           <A.ListMiddleWrapper>
             <A.CreateItemBtn onClick={props.onClickCreateItem}>
-              <FontAwesomeIcon icon={faStore} color="#cccccc" /> 상품등록
+              <ShopOutlined /> 상품등록
             </A.CreateItemBtn>
             <SearchBars
               onChangeKeyword={props.onChangeKeyword}
@@ -80,16 +79,12 @@ export default function MarketListUI(props: IPropsMarketListUI) {
                   {props.dataForPicked?.fetchUseditemsIPicked
                     .map((pick) => pick._id)
                     .includes(el._id) ? (
-                    <FontAwesomeIcon
-                      icon={faHeart}
-                      color="#1dbc67"
-                      style={{ fontSize: "15px", textAlign: "center" }}
+                    <HeartFilled
+                      style={{ color: "#1dbc67", fontSize: "15px" }}
                     />
                   ) : (
-                    <FontAwesomeIcon
-                      icon={faHeart}
-                      color="#ffffffc0"
-                      style={{ fontSize: "15px", textAlign: "center" }}
+                    <HeartOutlined
+                      style={{ color: "#ffffffda", fontSize: "15px" }}
                     />
                   )}
                 </A.PickWrapper>
@@ -98,7 +93,7 @@ export default function MarketListUI(props: IPropsMarketListUI) {
                     {el.name
                       .replaceAll(props.keyword, `!@#$${props.keyword}!@#$`)
                       .split("!@#$")
-                      .map((el) => (
+                      .map((el: any) => (
                         <A.TextToken
                           key={uuidv4()}
                           isMatched={props.keyword === el}

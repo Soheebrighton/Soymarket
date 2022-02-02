@@ -43,7 +43,7 @@ export default function BoardView() {
   const onClickDelete = async () => {
     try {
       await deleteBoard({ variables: { boardId: String(router.query.myId) } });
-    } catch (error) {
+    } catch (error: any) {
       alert(error.message);
     }
     Modal.success({

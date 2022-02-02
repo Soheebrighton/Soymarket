@@ -7,7 +7,7 @@ import {
   DELETE_BOARD_COMMENT,
   FETCH_BOARD_COMMENTS,
 } from "./BoardCommentList.queries";
-import { Avatar, Modal, Rate } from "antd";
+import { Avatar, Rate } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
@@ -22,18 +22,20 @@ export default function BoardCommentListUIItem(
   props: IBoardCommentListUIItemProps
 ) {
   const router = useRouter();
+
   const [isEdit, setIsEdit] = useState(false);
+
   const [deleteBoardComment] = useMutation<
     Pick<IMutation, "deleteBoardComment">,
     IMutationDeleteBoardCommentArgs
   >(DELETE_BOARD_COMMENT);
 
-  function onClickUpdate() {
+  const onClickUpdate = () => {
     setIsEdit(true);
-  }
+  };
 
   async function onClickDelete() {
-    // const myPassword = prompt("비밀번호를 입력하세요.");
+    const passwordForD = prompt("비밀번호를 입력하세요.");
 
     try {
       await deleteBoardComment({
@@ -48,23 +50,10 @@ export default function BoardCommentListUIItem(
           },
         ],
       });
-    } catch (error) {
+    } catch (error: any) {
       alert(error.message);
     }
   }
-
-  //// 모달창 //////
-
-  const [passwordForD, setPasswordForD] = useState("");
-  function CheckPassword(event) {
-    setPasswordForD(event.target.value);
-  }
-
-  const [isModalVisible, setIsModalVisible] = useState(false);
-
-  const onToggleModal = () => {
-    setIsModalVisible((prev) => !prev);
-  };
 
   return (
     <>
@@ -94,17 +83,8 @@ export default function BoardCommentListUIItem(
               <A.CommentEdit onClick={onClickUpdate}>
                 <FontAwesomeIcon icon={faEdit} color="#eeeeee" />
               </A.CommentEdit>
-              <A.CommentDelete onClick={onToggleModal}>
+              <A.CommentDelete onClick={onClickDelete}>
                 <FontAwesomeIcon icon={faTrashAlt} color="#eeeeee" />
-
-                <Modal
-                  visible={isModalVisible}
-                  onOk={onClickDelete}
-                  onCancel={onToggleModal}
-                >
-                  비밀번호를 입력하세요
-                  <input onChange={CheckPassword} type="password" />
-                </Modal>
               </A.CommentDelete>
             </A.CommentEandD>
           </A.CommentView>

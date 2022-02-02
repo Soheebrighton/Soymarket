@@ -9,7 +9,11 @@ import {
 import { IQuery } from "../../../../commons/types/generated/types";
 
 export interface FormValues {
+  name: string;
   email: string;
+  remarks: string;
+  price: number;
+  contents: string;
   password: string;
 }
 
@@ -24,17 +28,19 @@ export interface IPropsMarketCreateUI {
   register: UseFormRegister<{
     name: string | undefined;
     remarks: string | undefined;
-    price: Maybe<number>;
+    price: Maybe<number> | null;
+    contents: string | undefined;
   }>;
   formState: FormState<{
     name: string | undefined;
     remarks: string | undefined;
     contents: string | undefined;
+
     price?: any;
     tags?: any;
   }>;
   onClickEdit: (data: FormValues) => Promise<void>;
-  handleChangeQuill: (value: String) => void;
+  handleChangeQuill: (value: string) => void;
   tags: any;
   setTags: Dispatch<SetStateAction<string[]>>;
   handleComplete: (data: any) => void;
@@ -53,5 +59,6 @@ export interface IPropsMarketCreateUI {
     name: string | undefined;
     remarks: string | undefined;
     price: Maybe<number>;
+    contents: string | undefined;
   }>;
 }

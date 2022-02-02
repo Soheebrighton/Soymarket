@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build:ssg": "next build && next export",
+    "build:ssr": "next build",
     "start": "next start",
     "lint": "next lint",
     "generate": "graphql-codegen"
@@ -50,6 +51,7 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
+    "@ant-design/icons": "^4.7.0",
     "@graphql-codegen/cli": "^2.3.0",
     "@graphql-codegen/typescript": "^2.4.0",
     "@types/apollo-upload-client": "^14.1.0",

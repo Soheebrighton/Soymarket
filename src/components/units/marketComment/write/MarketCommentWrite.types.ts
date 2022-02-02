@@ -11,8 +11,8 @@ export interface IPropsMarketCommentWriteUI {
 }
 
 export interface IPropsMarketCommentWrite {
-  isEditQuestion: boolean;
-  setIsEditQuestion: any;
-  usedQId: string;
-  el: any;
+  isEditQuestion?: boolean;
+  setIsEditQuestion?: any;
+  usedQId?: string;
+  el?: any;
 }

@@ -13,28 +13,11 @@ import { createUploadLink } from "apollo-upload-client";
 import { createContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { getAccessToken } from "../src/commons/libraries/getAccessToken";
-// import { useEffect } from "react";
-// Import the functions you need from the SDKs you need
-import { FirebaseApp, initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyDO6seXLSvVJzQ43Z0a8hjnvBoz__Nkm1s",
-  authDomain: "codecamp04-freeboard.firebaseapp.com",
-  projectId: "codecamp04-freeboard",
-  storageBucket: "codecamp04-freeboard.appspot.com",
-  messagingSenderId: "745188247337",
-  appId: "1:745188247337:web:5c09f69a0bc0f14dac9938",
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+import { AppProps } from "next/dist/shared/lib/router/router";
 
 export const GlobalContext = createContext({});
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   const [myAccessToken, setMyAccessToken] = useState("");
   const [myUserInfo, setMyUserInfo] = useState({});
   const myValue = {
@@ -45,24 +28,19 @@ function MyApp({ Component, pageProps }) {
   };
 
   const router = useRouter();
-  // const history = [];
-  // if (typeof window !== "undefined") {
-  //   // localStorage.setItem(history.push(router.asPath));
-  //   // localStorage.setItem("history", history);
-  // }
 
   useEffect(() => storePathValues, [router.asPath]);
 
   function storePathValues() {
     const storage = globalThis?.sessionStorage;
-
     if (!storage) return;
     // Set the previous path as the value of the current path.
     const prevPath = String(storage.getItem("currentPath"));
     if (
-      globalThis.location.pathname === "/auth/login" ||
-      globalThis.location.pathname === "/auth/register"
+      globalThis.location.pathname === "/auth/login/" ||
+      globalThis.location.pathname === "/auth/register/"
     ) {
+      // eslint-disable-next-line no-useless-return
       return;
     } else {
       storage.setItem("prevPath", prevPath);
@@ -95,7 +73,7 @@ function MyApp({ Component, pageProps }) {
   });
 
   const uploadLink = createUploadLink({
-    uri: "https://backend04.codebootcamp.co.kr/graphql",
+    uri: "https://backend04.codebootcamp.co.kr/graphql03",
     headers: {
       authorization: `Bearer ${myAccessToken}`,
     },

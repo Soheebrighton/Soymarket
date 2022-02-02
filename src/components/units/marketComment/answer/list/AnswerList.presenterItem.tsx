@@ -39,7 +39,7 @@ export default function AnswerListUIItem(props: IPropsAnswerListUIItem) {
           },
         ],
       });
-    } catch (error) {
+    } catch (error: any) {
       alert(error.message);
     }
   };

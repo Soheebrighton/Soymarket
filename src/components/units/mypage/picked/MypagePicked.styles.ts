@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { IQuery } from "../../../../commons/types/generated/types";
 
 export const Background = styled.div`
   width: 100%;
@@ -89,6 +90,11 @@ export const Img = styled.img`
   }
 `;
 
+interface IPropsPickWrapper {
+  dataForPicked?: Pick<IQuery, "fetchUseditemsIPicked">;
+  el?: any;
+}
+
 export const PickWrapper = styled.div`
   position: absolute;
   align-self: flex-end;
@@ -96,14 +102,14 @@ export const PickWrapper = styled.div`
   margin: 10px;
   width: 30px;
   height: 30px;
-  border: ${(props) =>
+  border: ${(props: IPropsPickWrapper) =>
     props.dataForPicked?.fetchUseditemsIPicked
       .map((pick) => pick._id)
       .includes(props.el?._id)
       ? "1px solid #ffffff53"
       : "1px solid #ffffff53"};
   border-radius: 50px;
-  background-color: ${(props) =>
+  background-color: ${(props: IPropsPickWrapper) =>
     props.dataForPicked?.fetchUseditemsIPicked
       .map((pick) => pick._id)
       .includes(props.el?._id)

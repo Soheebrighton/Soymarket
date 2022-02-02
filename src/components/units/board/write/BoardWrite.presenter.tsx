@@ -145,7 +145,7 @@ export default function BoardWriteUI(props: IBoardWriteUIProps) {
             <A.UploadImageDiv>
               {props.fileUrls.map((el, index) => (
                 <Uploads01
-                  key={uuidv4}
+                  key={uuidv4()}
                   index={index}
                   fileUrl={el}
                   defaultFileUrl={props.data?.fetchBoard.images?.[index]}

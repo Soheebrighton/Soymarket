@@ -20,7 +20,7 @@ export default function Login() {
     showPassword: false,
   });
 
-  const { setAccessToken, setUserInfo } = useContext(GlobalContext);
+  const { setAccessToken, setUserInfo }: any = useContext(GlobalContext);
   const [inputs, setInputs] = useState({
     email: "",
     password: "",
@@ -88,7 +88,7 @@ export default function Login() {
         const prev = String(sessionStorage.getItem("currentPath"));
         setUserInfo(resultUserInfo.data.fetchUserLoggedIn);
         router.push(prev);
-      } catch (error) {
+      } catch (error: any) {
         alert(error.message);
       }
     }
@@ -99,7 +99,7 @@ export default function Login() {
   };
 
   const onClickRegister = () => {
-    router.replace("/auth/register");
+    router.replace("/auth/register/");
   };
 
   const handleClickShowPassword = () => {
