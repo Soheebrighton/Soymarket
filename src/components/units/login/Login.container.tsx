@@ -22,8 +22,8 @@ export default function Login() {
 
   const { setAccessToken, setUserInfo }: any = useContext(GlobalContext);
   const [inputs, setInputs] = useState({
-    email: "",
-    password: "",
+    email: "soy123@soymarket.shop",
+    password: "Soy123123!",
   });
 
   const [emailError, setEmailError] = useState<string>("");

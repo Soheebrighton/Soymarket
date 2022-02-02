@@ -54,7 +54,7 @@ export default function HeaderColorUI(props: IPropsHeaderColor) {
     setAnchorEl(null);
     await logoutUser();
     localStorage.removeItem("refreshToken");
-    // router.reload();
+    router.reload();
   };
 
   const handleCloseCart = async () => {

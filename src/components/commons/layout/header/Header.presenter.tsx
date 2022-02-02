@@ -55,7 +55,7 @@ export default function HeaderUI(props: IPropsHeaderUI) {
     setAnchorEl(null);
     await logoutUser();
     localStorage.removeItem("refreshToken");
-    // router.reload();
+    router.reload();
   };
 
   const handleCloseCart = async () => {
