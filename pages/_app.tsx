@@ -45,7 +45,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     } else {
       storage.setItem("prevPath", prevPath);
       // Set the current path value by looking at the browser's location object.
-      storage.setItem("currentPath", globalThis.location.pathname);
+      storage.setItem("prevPath", globalThis.location.pathname);
     }
   }
 
