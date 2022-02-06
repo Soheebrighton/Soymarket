@@ -34,7 +34,7 @@ export default function RegisterUI(props: IPropsRegisterUI) {
               <A.Error>{props.emailError}</A.Error>
               <Box sx={{ display: "flex", flexWrap: "wrap" }}>
                 <div>
-                  <A.FormBox sx={{ m: 1, width: "49ch" }} variant="standard">
+                  <A.FormBox sx={{ m: 1, width: "40ch" }} variant="standard">
                     <InputLabel htmlFor="standard-adornment-password">
                       비밀번호
                     </InputLabel>

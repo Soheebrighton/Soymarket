@@ -3,7 +3,6 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import FormControl from "@mui/material/FormControl";
 import IconButton from "@mui/material/IconButton";
-import { breakPoints } from "../../../commons/styles/media";
 
 export const Background = styled.div`
   background-image: url(/images/register_background.png);
@@ -67,9 +66,7 @@ export const ColorTitle = styled.span`
   font-family: "Montserrat";
 `;
 
-export const InputWrapper = styled.div`
-  width: 50%;
-`;
+export const InputWrapper = styled.div``;
 
 export const Input = styled.input`
   width: 430px;
