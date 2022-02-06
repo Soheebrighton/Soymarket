@@ -3,7 +3,6 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import FormControl from "@mui/material/FormControl";
 import IconButton from "@mui/material/IconButton";
-import { breakPoints } from "../../../commons/styles/media";
 
 export const Background = styled.div`
   background-image: url(/images/login_background.png);

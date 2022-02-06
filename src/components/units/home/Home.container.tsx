@@ -10,6 +10,7 @@ export default function HomeUI() {
   };
 
   useEffect(() => {
+    sessionStorage.setItem("currentPath", "/");
     sessionStorage.setItem("prevPath", "/");
   }, []);
 
