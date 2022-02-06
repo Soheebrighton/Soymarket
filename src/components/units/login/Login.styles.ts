@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import FormControl from "@mui/material/FormControl";
 import IconButton from "@mui/material/IconButton";
+import { breakPoints } from "../../../commons/styles/media";
 
 export const Background = styled.div`
   background-image: url(/images/login_background.png);
@@ -102,8 +103,7 @@ export const RegisterBtn = styled.div`
   text-align: center;
   color: white;
   font-size: 0.95rem;
-  width: 430px;
-  height: 60px;
+  width: 345px;
   padding: 8px;
   background-color: #1dbc67;
   border-radius: 10px;
@@ -125,7 +125,7 @@ export const EmailInputStyle = styled(TextField)({
 export const InputBox = styled(Box)({
   "& > :not(style)": {
     m: 1,
-    width: "49ch",
+    width: "39ch",
     marginTop: "5px",
     marginLeft: "9.5px",
     marginBottom: "8px",
@@ -160,7 +160,7 @@ export const InputBox = styled(Box)({
 export const FormBox = styled(FormControl)({
   "& > :not(style)": {
     m: 1,
-    width: "48.7ch",
+    width: "38.7ch",
   },
 
   "& .MuiInput-underline": {
@@ -192,7 +192,7 @@ export const Icon = styled(IconButton)({
 });
 
 export const SignUpBtn = styled.div`
-  margin-top: 45px;
+  margin-top: 25px;
   font-weight: 600;
   display: flex;
   flex-direction: row;
@@ -201,7 +201,7 @@ export const SignUpBtn = styled.div`
   text-align: center;
   color: #565656;
   font-size: 0.85rem;
-  width: 430px;
+  width: 345px;
   height: 40px;
   padding: 8px;
   background-color: #f5f6fa;

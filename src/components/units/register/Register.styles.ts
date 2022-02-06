@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import FormControl from "@mui/material/FormControl";
 import IconButton from "@mui/material/IconButton";
+import { breakPoints } from "../../../commons/styles/media";
 
 export const Background = styled.div`
   background-image: url(/images/register_background.png);
@@ -38,6 +39,7 @@ export const RightWrapper = styled.div`
   background-color: white;
   display: flex;
   flex-direction: column;
+
   @media (max-width: 1200px) {
     width: 100%;
   }
@@ -65,7 +67,9 @@ export const ColorTitle = styled.span`
   font-family: "Montserrat";
 `;
 
-export const InputWrapper = styled.div``;
+export const InputWrapper = styled.div`
+  width: 50%;
+`;
 
 export const Input = styled.input`
   width: 430px;
@@ -100,8 +104,7 @@ export const RegisterBtn = styled.div`
   text-align: center;
   color: white;
   font-size: 0.95rem;
-  width: 430px;
-  height: 60px;
+  width: 345px;
   padding: 8px;
   background-color: #1dbc67;
   border-radius: 10px;
@@ -114,7 +117,7 @@ export const RegisterBtn = styled.div`
 `;
 
 export const LoginBtn = styled.div`
-  margin-top: 45px;
+  margin-top: 25px;
   font-weight: 600;
   display: flex;
   flex-direction: row;
@@ -123,7 +126,7 @@ export const LoginBtn = styled.div`
   text-align: center;
   color: #565656;
   font-size: 0.85rem;
-  width: 430px;
+  width: 345px;
   height: 40px;
   padding: 8px;
   background-color: #f5f6fa;
@@ -150,7 +153,7 @@ export const EmailInputStyle = styled(TextField)({
 export const InputBox = styled(Box)({
   "& > :not(style)": {
     m: 1,
-    width: "49ch",
+    width: "39ch",
     marginTop: "5px",
     marginLeft: "9.5px",
     marginBottom: "8px",
@@ -189,7 +192,7 @@ export const Icon = styled(IconButton)({
 export const FormBox = styled(FormControl)({
   "& > :not(style)": {
     m: 1,
-    width: "48.7ch",
+    width: "38.7ch",
   },
 
   "& .MuiInput-underline": {

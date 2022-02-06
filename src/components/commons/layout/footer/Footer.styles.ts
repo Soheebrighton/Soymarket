@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Footer = styled.div`
   background-color: #f5f5f5;
@@ -7,6 +8,9 @@ export const Footer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const Content = styled.div`

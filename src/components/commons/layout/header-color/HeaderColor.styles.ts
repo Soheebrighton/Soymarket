@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { IPropsHeader } from "./HeaderColor.types";
 import Button from "@mui/material/Button";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Header = styled.div`
   display: flex;
@@ -25,6 +26,10 @@ export const Wrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  @media ${breakPoints.mobile} {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 export const Logo = styled.div`
   display: flex;

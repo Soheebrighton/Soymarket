@@ -18,7 +18,8 @@ export default function RegisterUI(props: IPropsRegisterUI) {
           </A.Logo>
           <A.Register>
             <A.Title>
-              WELCOME TO <A.ColorTitle>SOY.</A.ColorTitle>MARKET
+              WELCOME TO <br />
+              <A.ColorTitle>SOY.</A.ColorTitle>MARKET
             </A.Title>
             <A.InputWrapper>
               <A.InputBox>

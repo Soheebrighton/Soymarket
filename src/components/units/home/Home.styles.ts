@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../commons/styles/media";
 
 export const Background = styled.div`
   /* background-image: url("/images/background.png"); */
@@ -34,11 +35,23 @@ export const Text = styled.div`
   font-weight: 600;
   font-size: 2.5rem;
   text-shadow: 0 2px 10px #108245;
+  @media ${breakPoints.tablet} {
+    font-size: 1.8rem;
+  }
+  @media ${breakPoints.mobile} {
+    font-size: 1.4rem;
+  }
 `;
 export const SubText = styled.div`
   padding-top: 20px;
   padding-bottom: 20px;
   font-size: 1.4rem;
+  @media ${breakPoints.tablet} {
+    font-size: 1.2rem;
+  }
+  @media ${breakPoints.mobile} {
+    font-size: 0.8rem;
+  }
 `;
 
 export const Button = styled.button`
@@ -61,5 +74,8 @@ export const Button = styled.button`
     background-color: white;
     background: rgba(255, 255, 255, 0.7);
     color: black;
+  }
+  @media ${breakPoints.mobile} {
+    font-size: 12px;
   }
 `;
