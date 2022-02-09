@@ -7,7 +7,6 @@ interface IPropsGreenButton {
 
 const GreenBtn = styled.button`
   color: ${(props: IPropsGreenButton) => (props.size === "m" ? "red" : "blue")};
-  /* background-color: #1dbc67; */
   color: white;
   font-weight: 600;
   padding: 10px;
