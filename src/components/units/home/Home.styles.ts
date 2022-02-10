@@ -2,11 +2,7 @@ import styled from "@emotion/styled";
 import { breakPoints } from "../../../commons/styles/media";
 
 export const Background = styled.div`
-  /* background-image: url("/images/background.png"); */
-
-  /* width: 100%; */
   display: block;
-  /* background-repeat: no-repeat; */
 `;
 
 export const Img = styled.img`
