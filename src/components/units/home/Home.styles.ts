@@ -52,12 +52,6 @@ export const SubText = styled.div`
 
 export const Button = styled.button`
   background-color: #2a2a2a;
-  /* background: rgb(34, 195, 147);
-  background: linear-gradient(
-    119deg,
-    rgba(34, 195, 147, 1) 0%,
-    rgba(207, 227, 101, 1) 100%
-  ); */
   font-size: 15px;
   font-weight: 600;
   border: none;
