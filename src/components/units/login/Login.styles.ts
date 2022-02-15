@@ -52,7 +52,6 @@ export const Register = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* background-color: lightgreen; */
 `;
 
 export const Title = styled.div`
