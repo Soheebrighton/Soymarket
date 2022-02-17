@@ -41,7 +41,6 @@ export const RightWrapper = styled.div`
   @media (max-width: 1200px) {
     width: 100%;
   }
-  /* align-items: center; */
 `;
 
 export const Register = styled.div`
