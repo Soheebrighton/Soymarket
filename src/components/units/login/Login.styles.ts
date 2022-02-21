@@ -214,3 +214,5 @@ export const SignUpText = styled.u`
   padding-left: 5px;
   color: #272727;
 `;
+
+//
